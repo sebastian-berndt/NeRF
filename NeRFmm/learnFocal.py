@@ -1,3 +1,7 @@
+import torch
+import torch.nn as nn
+
+
 class LearnFocal(nn.Module):
     def __init__(self, H, W, req_grad):
         super(LearnFocal, self).__init__()
