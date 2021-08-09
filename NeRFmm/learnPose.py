@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
-from utils import make_c2w
+from NeRF.NeRFmm.utils import make_c2w
+
 
 class LearnPose(nn.Module):
     def __init__(self, num_cams, learn_R, learn_t):
