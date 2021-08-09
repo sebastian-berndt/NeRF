@@ -1,3 +1,11 @@
+import torch
+import numpy as np
+from nerfmm.utils.pos_enc import encode_position
+from nerfmm.utils.volume_op import volume_rendering, volume_sampling_ndc
+from nerfmm.utils.comp_ray_dir import comp_ray_dir_cam_fxfy
+import torch.nn.functional as F
+
+
 def model_render_image(c2w, rays_cam, t_vals, ray_params, H, W, fxfy, nerf_model,
                        perturb_t, sigma_noise_std):
     """
@@ -38,7 +46,7 @@ def model_render_image(c2w, rays_cam, t_vals, ray_params, H, W, fxfy, nerf_model
 
 
 def train_one_epoch(imgs, H, W, ray_params, opt_nerf, opt_focal,
-                    opt_pose, nerf_model, focal_net, pose_param_net):
+                    opt_pose, nerf_model, focal_net, pose_param_net, N_IMGS):
     nerf_model.train()
     focal_net.train()
     pose_param_net.train()
