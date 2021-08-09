@@ -2,15 +2,13 @@ import tensorflow as tf
 import numpy as np
 
 
-def posenc(x):
+def posenc(x, L_embed):
   rets = [x]
   for i in range(L_embed):
     for fn in [tf.sin, tf.cos]:
       rets.append(fn(2.**i * x))
   return tf.concat(rets, -1)
 
-L_embed = 9
-embed_fn = posenc
 # L_embed = 0
 # embed_fn = tf.identity
 
