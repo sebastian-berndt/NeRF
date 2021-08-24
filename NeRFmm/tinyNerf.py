@@ -1,3 +1,6 @@
+import torch
+import torch.nn as nn
+
 class TinyNerf(nn.Module):
     def __init__(self, pos_in_dims, dir_in_dims, D):
         """
