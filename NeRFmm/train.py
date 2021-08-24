@@ -1,9 +1,10 @@
 import torch
 import numpy as np
-from nerfmm.utils.pos_enc import encode_position
-from nerfmm.utils.volume_op import volume_rendering, volume_sampling_ndc
-from nerfmm.utils.comp_ray_dir import comp_ray_dir_cam_fxfy
+from NeRF.NeRFmm.nerfmm.utils.pos_enc import encode_position
+from NeRF.NeRFmm.nerfmm.utils.volume_op import volume_rendering, volume_sampling_ndc
+from NeRF.NeRFmm.nerfmm.utils.comp_ray_dir import comp_ray_dir_cam_fxfy 
 import torch.nn.functional as F
+
 
 
 def model_render_image(c2w, rays_cam, t_vals, ray_params, H, W, fxfy, nerf_model,
