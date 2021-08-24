@@ -2,10 +2,10 @@ import torch
 import os
 import imageio
 import numpy as np
-from nerfmm.utils.comp_ray_dir import comp_ray_dir_cam_fxfy
-from nerfmm.utils.lie_group_helper import convert3x4_4x4
-from nerfmm.utils.volume_op import volume_rendering, volume_sampling_ndc
-from nerfmm.utils.pos_enc import encode_position
+from NeRF.NeRFmm.nerfmm.utils.comp_ray_dir import comp_ray_dir_cam_fxfy
+from NeRF.NeRFmm.nerfmm.utils.lie_group_helper import convert3x4_4x4
+from NeRF.NeRFmm.nerfmm.utils.volume_op import volume_rendering, volume_sampling_ndc
+from NeRF.NeRFmm.nerfmm.utils.pos_enc import encode_position
 import torch.nn.functional as F
 
 
